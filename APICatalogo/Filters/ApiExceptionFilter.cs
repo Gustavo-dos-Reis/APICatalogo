@@ -12,7 +12,7 @@ namespace APICatalogo.Filters
         }
         void IExceptionFilter.OnException(ExceptionContext context)
         {
-            _logger.LogError(context.Exception, "Ocorreu uma exceção não tratada.");
+            _logger.LogError(context.Exception, "Ocorreu uma exceção não tratada: Status Code 500");
             context.Result = new ObjectResult("Ocorreu um problema ao tratar a sua solicitação.")
             {
                 StatusCode = StatusCodes.Status500InternalServerError ,

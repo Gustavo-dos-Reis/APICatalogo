@@ -30,7 +30,7 @@
 
         private void EscreverTextoNoArquivo(string mensagem)
         {
-            string caminhoArquivoLog = @"d:\dados\log\Macoratti_Log.txt";
+            string caminhoArquivoLog = @"c:\dados\log\Gustavo_Log.txt";
             using (StreamWriter streamWriter = new StreamWriter(caminhoArquivoLog, true))
             {
                 try

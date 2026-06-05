@@ -1,4 +1,5 @@
 using APICatalogo.Context;
+using APICatalogo.DTOs.Mappings;
 using APICatalogo.Extensions;
 using APICatalogo.Extensions.Logging;
 using APICatalogo.Filters;
@@ -17,7 +18,7 @@ builder.Services.AddControllers(options =>
 .AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-});
+}).AddNewtonsoftJson();
 
 
 
@@ -40,6 +41,7 @@ var valor2 = builder.Configuration["secao1:chave2"];
 //{
 //    throw new Exception("Connection string não encontrada.");
 //}
+builder.Services.AddAutoMapper(typeof(ProdutoDTOMappingProfile));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(mySqlConnection,

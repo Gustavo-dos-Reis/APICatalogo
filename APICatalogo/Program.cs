@@ -38,7 +38,7 @@ var valor2 = builder.Configuration["secao1:chave2"];
 //Console.WriteLine(mysSqlConnection);
 
 //if (string.IsNullOrEmpty(mysSqlConnection))
-//{
+//{ 
 //    throw new Exception("Connection string não encontrada.");
 //}
 builder.Services.AddAutoMapper(typeof(ProdutoDTOMappingProfile));

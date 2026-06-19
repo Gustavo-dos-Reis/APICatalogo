@@ -4,8 +4,10 @@ namespace APICatalogo.Repositories
 {
     public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
-        T? Get(Expression<Func<T, bool>> predicate);
+        //precisa acessar dados no banco
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T?> GetAsync(Expression<Func<T, bool>> predicate);
+        //Não acessam o banco de dados. Realizam as operações na memória
         T Create(T entity);
         T Update(T entity);
         T Delete(T entity); 

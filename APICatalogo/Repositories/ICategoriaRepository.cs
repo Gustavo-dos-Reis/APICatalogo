@@ -2,12 +2,13 @@
 using APICatalogo.Pagination;
 using APICatalogo.Properties.Models;
 using System.Runtime.InteropServices;
+using X.PagedList;
 
 namespace APICatalogo.Repositories
 {
     public interface ICategoriaRepository : IRepository<Categoria>
     {
-        PagedList<Categoria> GetCategorias(CategoriasParameters categoriasParams);
-        PagedList<Categoria> GetCategoriasFiltroNome(CategoriasFiltroNome categoriasParams);
+        Task<IPagedList<Categoria>> GetCategoriasAsync(CategoriasParameters categoriasParams);
+        Task<IPagedList<Categoria>> GetCategoriasFiltroNomeAsync(CategoriasFiltroNome categoriasParams);
     }
 }
